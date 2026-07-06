@@ -20,7 +20,9 @@ jobs:
           port: ${{ secrets.VM_PORT }}
           username: ${{ secrets.VM_USERNAME }}
           password: ${{ secrets.VM_PASSWORD }}
+          script_stop: true
           script: |
             cd /opt/simbill
-            chmod +x deploy-vm.sh
-            ./deploy-vm.sh
+            sudo git pull origin main
+            cd backend
+            sudo pm2 restart billing-radius
