@@ -20,6 +20,8 @@ router.get('/', async (req, res, next) => {
 
     // Tandai voucher yang sudah dipakai (dari radacct) jadi 'used'
     await radiusService.syncStatusVoucher().catch(()=>{});
+    // Tandai voucher yang masa aktifnya sudah habis jadi 'expired'
+    await radiusService.expireVoucherHabis().catch(()=>{});
 
     const { status, paket_id, batch_id, cari, halaman = 1, limit = 30 } = req.query;
     const offset = (parseInt(halaman)-1) * parseInt(limit);
