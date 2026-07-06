@@ -20,9 +20,10 @@ jobs:
           port: ${{ secrets.VM_PORT }}
           username: ${{ secrets.VM_USERNAME }}
           password: ${{ secrets.VM_PASSWORD }}
-          script_stop: true
           script: |
             cd /opt/simbill
             sudo git pull origin main
             cd backend
+            sudo npm install
             sudo pm2 restart billing-radius
+            sudo pm2 status
