@@ -14,7 +14,7 @@ set -euo pipefail
 # ───────────────────────── KONFIGURASI (ganti sesuai repo-mu) ────────────────
 GITHUB_USER="${GITHUB_USER:-DedhyPraditya}"
 GITHUB_REPO="${GITHUB_REPO:-billing}"
-GITHUB_BRANCH="${GITHUB_BRANCH:-master}"
+GITHUB_BRANCH="${GITHUB_BRANCH:-main}"
 
 INSTALL_DIR="${INSTALL_DIR:-/opt/simbill}"
 APP_PORT="${APP_PORT:-3000}"
