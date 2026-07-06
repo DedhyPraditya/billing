@@ -730,6 +730,33 @@ body.dark #inv-action-menu button:hover{background:#1e2632}
     padding:9px 12px;border-radius:8px;font-size:13px;cursor:pointer}#p-olt .menu-pop button:hover{background:var(--panel-2)}#p-olt .empty-row td{text-align:center;color:var(--faint);padding:30px}#p-olt .pgsize{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}#p-olt .pgsize select{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 8px;font-family:inherit;font-size:12px}#p-olt .pager{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;padding:14px 16px;border-top:1px solid var(--line)}#p-olt .pgbtn{min-width:32px;height:32px;padding:0 8px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);border-radius:8px;font-family:var(--mono);font-size:13px;cursor:pointer}#p-olt .pgbtn:hover:not(:disabled){border-color:var(--indigo)}#p-olt .pgbtn.active{background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;border:none}#p-olt .pgbtn:disabled{opacity:.4;cursor:default}#p-olt .pgdot{color:var(--faint);padding:0 4px}#p-olt .tb-search .ico i{font-size:15px}#p-olt .pill-btn i{font-size:15px}#p-olt .sd-ico i{font-size:19px}#p-olt .sync-card .ico i{font-size:17px}#p-olt .tr-badge i{font-size:11px}#p-olt .eye-btn i{font-size:17px;display:block}
 #p-olt .overlay{z-index:9999}
 #p-olt{padding:16px}
+#p-olt .olt-shell{display:flex;flex-direction:column;gap:12px}
+#p-olt .olt-hero{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 18px}
+#p-olt .tb-main{display:flex;align-items:center;gap:10px;min-width:0}
+#p-olt .tb-id{width:36px;height:36px;border-radius:999px}
+#p-olt .tb-title h1{font-size:18px}
+#p-olt .tb-title .sub{font-size:11px;line-height:1.45}
+#p-olt .tb-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+#p-olt .meta-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:transparent;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:600;white-space:nowrap}
+#p-olt .meta-pill strong{color:var(--ink);font-weight:700}
+#p-olt .topbar{gap:10px;padding:12px 14px;margin-bottom:0}
+#p-olt .topbar>.tb-id,#p-olt .topbar>.tb-title,#p-olt .topbar>.tb-spacer{display:none}
+#p-olt .topbar .tb-ctrls{width:100%}
+#p-olt .tb-search input{padding:8px 12px 8px 32px}
+#p-olt .pill-btn{padding:8px 13px;font-size:12px}
+#p-olt .tb-sel{padding:8px 12px;font-size:12px}
+#p-olt .auto{font-size:12px;color:var(--muted)}
+#p-olt .layout{grid-template-columns:220px 1fr;gap:14px}
+#p-olt .side{gap:10px}
+#p-olt .side-card{padding:12px}
+#p-olt .sd-stat{gap:10px;padding:10px 12px}
+#p-olt .sd-ico{width:34px;height:34px;font-size:16px}
+#p-olt .sd-meta .l{font-size:11px}
+#p-olt .sd-meta .n{font-size:18px}
+#p-olt .main-head{padding:12px 14px}
+#p-olt .otable th{padding:10px 14px}
+#p-olt .otable td{padding:11px 14px}
+@media(max-width:640px){#p-olt .olt-hero,#p-olt .topbar{padding:14px}#p-olt .tb-main{width:100%}#p-olt .tb-meta{width:100%;justify-content:flex-start}}
 
 </style>
 </head>
@@ -1619,6 +1646,20 @@ body.dark #inv-action-menu button:hover{background:#1e2632}
       </div>
 
       <div class="page" id="p-olt"><div class="olt-app">
+<div class="olt-shell">
+<div class="olt-hero">
+  <div class="tb-main">
+    <div class="tb-id">OLT</div>
+    <div class="tb-title">
+      <h1 id="tbNameHero">OLT</h1>
+      <div class="sub" id="tbSubHero">memuat…</div>
+    </div>
+  </div>
+  <div class="tb-meta">
+    <div class="meta-pill"><i class="ti ti-router"></i> Mode: <strong id="tbMode">Semua PON</strong></div>
+    <div class="meta-pill"><i class="ti ti-clock-hour-4"></i> Sinkron: <strong id="tbSyncMeta">—</strong></div>
+  </div>
+</div>
 <div class="topbar">
   <div class="tb-id" id="tbId">OLT</div>
   <div class="tb-title">
@@ -1633,7 +1674,7 @@ body.dark #inv-action-menu button:hover{background:#1e2632}
     <button class="pill-btn blue" id="refreshBtn"><i class="ti ti-refresh"></i> Refresh</button>
     <button class="pill-btn green" id="oltCfgBtn"><i class="ti ti-plus"></i> Tambah</button>
     <div style="position:relative"><button class="pill-btn icon" id="menuBtn"><i class="ti ti-dots-vertical"></i></button><div id="menuPop"></div></div>
-    <label class="auto" style="margin-left:2px"><input type="checkbox" id="autoChk"> auto 30s</label>
+    <label class="auto"><input type="checkbox" id="autoChk"> auto 30s</label>
   </div>
 </div>
 
@@ -4516,7 +4557,7 @@ Silakan lakukan pembayaran sebelum jatuh tempo. Terima kasih! 🙏</textarea>
                 <button class="btn" onclick="apiTestRADIUS()" style="gap:5px">
                   <i class="ti ti-plug" style="font-size:13px" aria-hidden="true"></i> Test RADIUS
                 </button>
-                <button class="btn danger" onclick="if(confirm('Restart RADIUS service?')) apiFetch(\'/api/radius/restart\',{method:\'POST\'}).then(()=>toast(\'✅ RADIUS restarted\')).catch(e=>toast(\'❌ \'+e.message,true))" style="gap:5px">
+                <button class="btn danger" onclick="if(confirm('Restart RADIUS service?')) apiFetch('/api/radius/restart',{method:'POST'}).then(()=>toast('✅ RADIUS restarted')).catch(e=>toast('❌ '+e.message,true))" style="gap:5px">
                   <i class="ti ti-refresh-alert" style="font-size:13px" aria-hidden="true"></i> Restart RADIUS
                 </button>
               </div>
@@ -17224,6 +17265,10 @@ async function loadDashboard(){
     // dashboard (akan balas "OLT tidak ditemukan") — tampilkan empty state kalem.
     const nm=$('#tbName'); if(nm) nm.textContent='—';
     const sub=$('#tbSub'); if(sub) sub.textContent='Belum ada OLT';
+    const nmHero=$('#tbNameHero'); if(nmHero) nmHero.textContent='—';
+    const subHero=$('#tbSubHero'); if(subHero) subHero.textContent='Belum ada OLT';
+    const modeHero=$('#tbMode'); if(modeHero) modeHero.textContent='Semua PON';
+    const syncHero=$('#tbSyncMeta'); if(syncHero) syncHero.textContent='—';
     $('#oltRows').innerHTML='<tr class="empty-row"><td colspan="6" style="color:var(--text3);text-align:center;padding:22px">Belum ada OLT dikonfigurasi. Klik <b>+ Tambah</b> untuk menambah OLT.</td></tr>';
     return;
   }
@@ -17236,6 +17281,10 @@ async function loadDashboard(){
     $('#tbId').textContent=shortId(d.olt.name||currentOlt);
     $('#tbSub').textContent=(d.olt.model||'ZTE')+' · '+ (_ponFilter||'Semua PON');
     $('#syncDt').textContent=new Date(d.ts||Date.now()).toLocaleString('id-ID',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    const tbNameHero=$('#tbNameHero'); if(tbNameHero) tbNameHero.textContent=d.olt.name||currentOlt;
+    const tbSubHero=$('#tbSubHero'); if(tbSubHero) tbSubHero.textContent=(d.olt.model||'ZTE')+' · '+ (_ponFilter||'Semua PON');
+    const tbMode=$('#tbMode'); if(tbMode) tbMode.textContent=_ponFilter? 'PON '+_ponFilter : 'Semua PON';
+    const tbSyncMeta=$('#tbSyncMeta'); if(tbSyncMeta) tbSyncMeta.textContent=$('#syncDt').textContent;
     _allOnus=d.onus; _uncfg=d.uncfg||[];
     _metrics={}; _page=1;          // reset metrik & halaman tiap reload
     fillPonFilter(d.onus);
@@ -18332,7 +18381,7 @@ async function oltCfgDelete(id,nama){
 
 // ── wiring kontrol baru (search, filter PON, sidebar, menu) ──
 $('#searchInp').oninput=(e)=>{ _search=e.target.value.trim(); _page=1; renderTable(); };
-$('#ponSel').onchange=(e)=>{ _ponFilter=e.target.value; _page=1; $('#tbSub').textContent=($('#tbName').textContent? '':'')+( _ponFilter? 'PON '+_ponFilter : 'Semua PON'); renderTable(); renderSidebar(null,_allOnus); };
+$('#ponSel').onchange=(e)=>{ _ponFilter=e.target.value; _page=1; const ponLabel=_ponFilter? 'PON '+_ponFilter : 'Semua PON'; $('#tbSub').textContent=($('#tbName').textContent? '':'')+ponLabel; const tbSubHero=$('#tbSubHero'); if(tbSubHero) tbSubHero.textContent=($('#tbName').textContent? '':'')+ponLabel; const tbMode=$('#tbMode'); if(tbMode) tbMode.textContent=ponLabel; renderTable(); renderSidebar(null,_allOnus); };
 document.querySelectorAll('.sd-stat').forEach(el=>{
   el.onclick=()=>{
     const f=el.getAttribute('data-filter')||'';
