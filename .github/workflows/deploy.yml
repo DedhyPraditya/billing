@@ -22,8 +22,7 @@ jobs:
           key: ${{ secrets.VM_KEY }}
           script: |
             cd /opt/simbill
-            sudo git pull origin main
+            git pull origin main
             cd backend
-            sudo npm install
-            sudo pm2 restart billing-radius
-            sudo pm2 status
+            pm2 restart billing-radius
+            pm2 status
