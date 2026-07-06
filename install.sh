@@ -12,8 +12,8 @@
 set -euo pipefail
 
 # ───────────────────────── KONFIGURASI (ganti sesuai repo-mu) ────────────────
-GITHUB_USER="${GITHUB_USER:-idpanyoet}"
-GITHUB_REPO="${GITHUB_REPO:-SimBill-Project}"
+GITHUB_USER="${GITHUB_USER:-DedhyPraditya}"
+GITHUB_REPO="${GITHUB_REPO:-billing}"
 GITHUB_BRANCH="${GITHUB_BRANCH:-master}"
 
 INSTALL_DIR="${INSTALL_DIR:-/opt/simbill}"
